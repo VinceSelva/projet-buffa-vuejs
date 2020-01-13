@@ -9,7 +9,14 @@ import RestaurantDetail from "./components/RestaurantDetail.vue";
 import HelloWorld from "./components/HelloWorld.vue";
 
 // configs...
+import * as VueGoogleMaps from 'vue2-google-maps'
 
+// configs... 
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: 'AIzaSyBIxvhnnwr5-rfsf0Kmf4s7NUJh2IDHmKc',
+    libraries: 'places',
+  },})
 
 
 
@@ -44,7 +51,6 @@ const router = new VueRouter({
 
 new Vue({
   router,
-
 
   // si router pas de rendu de composant
   render: h => h(App)

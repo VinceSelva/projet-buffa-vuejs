@@ -15,6 +15,7 @@
 <script>
 export default {
   props: {
+  item: Array
   },
 
   data: function(){

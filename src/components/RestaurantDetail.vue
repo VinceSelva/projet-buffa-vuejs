@@ -8,6 +8,7 @@
     <restaurant-menu :item="menus"></restaurant-menu>
     <restaurant-note :item="note"></restaurant-note>
     <restaurant-map :item="coord"></restaurant-map>
+    <div class="restaurant-map"></div>
 
   </div>
 </template>
