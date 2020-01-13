@@ -3,14 +3,28 @@
     <h1>Details du restaurant {{nom}}</h1>
     <p> Type : {{cuisine}} </p>
     <p> Adresse : {{addr}} </p>
+
+    <restaurant-carte></restaurant-carte>
+    <restaurant-menu></restaurant-menu>
+    <restaurant-note></restaurant-note>
+    <restaurant-map></restaurant-map>
+
   </div>
 </template>
 
 <script>
+import RestaurantCarte from './RestaurantCarte';
+import RestaurantMenu from './RestaurantMenu';
+import RestaurantNote from './RestaurantNote';
+import RestaurantMap from './RestaurantMap';
 export default {
   name: "RestaurantDetail",
   props: {},
   components: {
+    RestaurantCarte,
+    RestaurantMenu,
+    RestaurantEvaluation,
+    RestaurantMap
   },
   computed: { // computed data, permet de définir des data "calculées"
     id() {
