@@ -24,14 +24,14 @@
   <div>
     <form v-if="isInModif" v-on:submit="modifierRestaurant" method="post">
       <h1>Modifier le restaurant {{nomModif}} :</h1>
-      Nom du restaurant :<input type="text" v-model="nom" required>
-      Type de cuisine :<input type="text" v-model="cuisine" required>
+      Nom du restaurant:<input type="text" v-model="nom" required>
+      Type de cuisine:<input type="text" v-model="cuisine" required>
       <button type="submit">Modifier</button>
     </form>
     <form v-else v-on:submit="ajouterRestaurant" method="post">
       <h1>Ajouter un nouveau restaurant :</h1>
-      Nom du restaurant :<input type="text" v-model="nom" required>
-      Type de cuisine :<input type="text" v-model="cuisine" required>
+      Nom du restaurant:<input type="text" v-model="nom" required>
+      Type de cuisine:<input type="text" v-model="cuisine" required>
       <button type="submit">Ajouter</button>
     </form>
   </div>
@@ -47,9 +47,9 @@
             </md-table-toolbar>
 
             <md-table-empty-state
-              md-label="No users found"
-              :md-description="`No user found for this '${nomRecherche}' query. Try a different search term or create a new user.`">
-            </md-table-empty-state>
+        md-label="No users found"
+        :md-description="`No user found for this '${nomRecherche}' query. Try a different search term or create a new user.`">
+      </md-table-empty-state>
 
             
 
