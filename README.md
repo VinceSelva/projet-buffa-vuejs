@@ -1,24 +1,11 @@
 # Projet restaurants VueJS REJNERI & SELVA
 
-## Project setup
-```
-npm install
-```
+## Un gestionnaire de menus / cartes pour des restaurants
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Trois terminals de commandes sont nécessaires :
 
-### Compiles and minifies for production
-```
-npm run build
-```
+* npm install puis node serverCrudWithMongo.js
 
-### Lints and fixes files
-```
-npm run lint
-```
+* mongod
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+* npm install puis npm run serve
