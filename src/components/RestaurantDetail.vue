@@ -1,11 +1,8 @@
 <template>
   <div>
-    <h1>Details du restaurant {{id}}</h1>
-    <p> Type : {{restaurant.cuisine}} </p>
-    <p> Adresse : {{restaurant}} </p>
-    <p> Longitude : {{lon}} - Latitute : {{lat}} </p>
-    <p> Description du quartier : {{quartier}} </p>
-    <div class="restaurant-map">esfsef</div>
+    <h1>Details du restaurant {{nom}}</h1>
+    <p> Type : {{cuisine}} </p>
+    <p> Adresse : {{addr}} </p>
   </div>
 </template>
 
@@ -25,130 +22,23 @@ export default {
   data:() => {
     return {
       restaurant: {},
-      //nom: "",
+      nom: "",
       cuisine: "",
-      adr: "",
+      addr: "",
       lon: "",
       lat: "",
       quartier: "",
-      apiURL: "http://localhost:8080/api/restaurants",
-      carte: [{
-        nom: "Entrées",
-        plats: [{
-          nom: "Salade de chèvres chauds",
-          description: "Salade composée de salade et de fromage de chèvre chaud",
-          img: "",
-          prix: "12"},
-          {
-          nom: "Plateau de foie gras",
-          description: "Plateau avec du foie gras lol",
-          img: "",
-          prix: "14"},
-          {
-          nom: "Salade de poulpe",
-          description: "Salade avec du poulpe dedans",
-          img:"",
-          prix: "15"}]},
-        {
-        nom: "Plats",
-        plats: [{
-          nom: "Salade de chèvres chauds",
-          description: "Salade composée de salade et de fromage de chèvre chaud",
-          img: "",
-          prix: "12"},
-          {
-          nom: "Plateau de foie gras",
-          description: "Plateau avec du foie gras lol",
-          img: "",
-          prix: "14"},
-          {
-          nom: "Salade de poulpe",
-          description: "Salade avec du poulpe dedans",
-          img:"",
-          prix: "15"}]},
-        {
-        nom: "Desserts",
-        plats: [{
-          nom: "Salade de chèvres chauds",
-          description: "Salade composée de salade et de fromage de chèvre chaud",
-          img: "",
-          prix: "12"},
-          {
-          nom: "Plateau de foie gras",
-          description: "Plateau avec du foie gras lol",
-          img: "",
-          prix: "14"},
-          {
-          nom: "Salade de poulpe",
-          description: "Salade avec du poulpe dedans",
-          img:"",
-          prix: "15"}]
-      }],
-      menus: [{
-        nom: "Menu Simple",
-        prix: 20,
-        entrees: ["Salade de chèvres chauds", "Plateau de foie gras", "Tapas"],
-        plats: ["Filet mignon en croûte", "Dobe de sanglier", "Cuisse de canard"],
-        desserts: ["Mousse au chocolat", "Glace", "Banane flambées"]
-      },
-      {
-        nom: "Menu gastronomique",
-        prix: 32,
-        entrees: ["Salade de poulpe", "Tartare de saumon", "Caviar"],
-        plats: ["Souris d'agneau", "Tartare de boeuf", "Gambas sautées"],
-        desserts: ["Tiramisu", "Crème brulée", "Profiterols"]
-      }],
-      evaluations: [{
-        nom: "Louis",
-        grade: "5",
-        commentaire:"OK"
-      },
-      {
-        nom: "Max",
-        grade: "3",
-        commentaire:"BOF"
-      }]
+      apiURL: "http://localhost:8080/api/restaurants"
     };
   },
   mounted() {
     console.log("AVANT AFFICHAGE !");
     console.log("On va chercher les détails du restaurant id = " + this.$route.params.id)
     console.log("ID = " + this.id);
-  },
-  updated() {
     this.getDataFromServer();
-    console.log("ID = " + this.id);
   },
   methods: {
     async getDataFromServer() {
-    
-      /*try {
-        let reponseJSON   = await fetch(url);
-        let reponseJS     = await reponseJSON.json();
-        this.restaurants   = reponseJS.data;
-        this.restaurants.forEach(element => {
-          if (element._id == this.id){
-            this.restaurant = element;
-          }
-        
-        });
-        //this.restaurant = this.restaurants.
-      } catch(err) {
-        console.log("Erreur dans les fetchs GET " + err.msg);
-      } */
-      
-      /*fetch(url)
-      .then(reponseJSON => {
-        return reponseJSON.json()
-        .then(res => {
-          console.log('DETAIL', res.restaurant)
-          this.restaurant = res.restaurant;
-        });
-      })
-      .catch(function(err){
-        console.log("Erreur dans les fetchs GET " + err.msg);
-      })*/
-
       
         let url = this.apiURL + "/" + this.id;
 
@@ -158,7 +48,9 @@ export default {
           });
           let reponseJS = await reponseJSON.json();
           this.restaurant = reponseJS.restaurant;
-          console.log(reponseJS);
+          this.nom = reponseJS.restaurant.name;
+          this.cuisine = reponseJS.restaurant.cuisine;
+          this.addr = reponseJS.restaurant.address.building + " " + reponseJS.restaurant.address.street + ", " + reponseJS.restaurant.address.zipcode + " " + reponseJS.restaurant.borough;
         } catch (err) {
           console.log("Erreur dans les fetchs GET " + err.msg);
         }
