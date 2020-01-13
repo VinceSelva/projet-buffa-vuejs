@@ -1,12 +1,23 @@
 <template>
   <div>
-    test
+    <h1> La carte </h1>
+    <div v-if="item">  
+      <div v-for="carte in item" :key="carte.nom">
+        <h2> Les {{carte.nom}} </h2>
+        <div v-for="plat in carte.plats" :key="plat.nom">
+          <h3> {{plat.nom}} </h3>
+          <p> {{plat.desription}} </p>
+          <p> Prix : {{plat.prix}}€</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   props: {
+  item: Array
   },
 
   data: function(){

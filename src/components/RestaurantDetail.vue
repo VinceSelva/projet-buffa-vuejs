@@ -4,10 +4,10 @@
     <p> Type : {{cuisine}} </p>
     <p> Adresse : {{addr}} </p>
 
-    <restaurant-carte></restaurant-carte>
-    <restaurant-menu></restaurant-menu>
-    <restaurant-note></restaurant-note>
-    <restaurant-map></restaurant-map>
+    <restaurant-carte :item="carte"></restaurant-carte>
+    <restaurant-menu :item="menus"></restaurant-menu>
+    <restaurant-note :item="note"></restaurant-note>
+    <restaurant-map :item="coord"></restaurant-map>
 
   </div>
 </template>
@@ -23,7 +23,7 @@ export default {
   components: {
     RestaurantCarte,
     RestaurantMenu,
-    RestaurantEvaluation,
+    RestaurantNote,
     RestaurantMap
   },
   computed: { // computed data, permet de définir des data "calculées"
@@ -38,6 +38,10 @@ export default {
       restaurant: {},
       nom: "",
       cuisine: "",
+      carte: [],
+      menu: [],
+      coord: [],
+      note:[],
       addr: "",
       lon: "",
       lat: "",
@@ -65,6 +69,10 @@ export default {
           this.nom = reponseJS.restaurant.name;
           this.cuisine = reponseJS.restaurant.cuisine;
           this.addr = reponseJS.restaurant.address.building + " " + reponseJS.restaurant.address.street + ", " + reponseJS.restaurant.address.zipcode + " " + reponseJS.restaurant.borough;
+          this.carte = reponseJS.restaurant.carte;
+          this.menus = reponseJS.restaurant.menus;
+          this.evaluations = reponseJS.restaurant.grades;
+          this.coord = reponseJS.restaurant.address.coord;
         } catch (err) {
           console.log("Erreur dans les fetchs GET " + err.msg);
         }
