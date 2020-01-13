@@ -4,11 +4,16 @@
     <p> Type : {{cuisine}} </p>
     <p> Adresse : {{addr}} </p>
 
+    <div>
+      <img src="../assets/restaurant.jpg">
+    </div>
+
     <restaurant-carte :item="carte"></restaurant-carte>
     <restaurant-menu :item="menus"></restaurant-menu>
     <restaurant-note :item="note"></restaurant-note>
     <restaurant-map :item="coord"></restaurant-map>
     <div class="restaurant-map"></div>
+
 
   </div>
 </template>
