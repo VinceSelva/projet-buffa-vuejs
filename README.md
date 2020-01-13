@@ -18,3 +18,5 @@ Liste des restaurants avec les menus :
 - Indian oven
 - Subway
 - Fairfild Inn suites penn station
+
+Au tout début nous avions réussi à héberger notre application avec heroku mais depuis que nous avons rajouté les fonctionnalités ca ne marche plus : https://miniprojet-vuejs.herokuapp.com/
