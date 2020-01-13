@@ -11,6 +11,7 @@
 * npm install puis npm run serve
 
 
+
 En ce qui concerne le détail des restaurants pour les menus, nous l'avons ajouté que sur certain restaurant.
 Liste des restaurants avec les menus :
 - Mokja
@@ -19,4 +20,6 @@ Liste des restaurants avec les menus :
 - Subway
 - Fairfild Inn suites penn station
 
-Au tout début nous avions réussi à héberger notre application avec heroku mais depuis que nous avons rajouté les fonctionnalités ca ne marche plus : https://miniprojet-vuejs.herokuapp.com/
+Au tout début nous avions réussi à héberger notre application avec heroku mais depuis que nous avons rajouté les fonctionnalités ca ne marche plus : https://miniprojet-vuejs.herokuapp.com/ nous sommes donc resté en local.
+
+Pour la base de données nous avons renseigné nos données avec NoSQLBooster for MongoDB pour ajouter les menus, entrées, plats et dessert.
