@@ -1,6 +1,14 @@
 <template>
   <div>
-    test
+    <GmapMap
+  :center="{lat:item[1], lng:item[0]}"
+  :zoom="7"
+  map-type-id="terrain"
+  style="width: 500px; height: 300px"
+>
+</GmapMap>
+
+
   </div>
 </template>
 

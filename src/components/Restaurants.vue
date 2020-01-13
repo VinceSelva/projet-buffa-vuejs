@@ -20,7 +20,6 @@
   <button v-on:click="pagePrecedente()" v-bind:disabled="page==0">Précédent</button>
   <button v-on:click="pageSuivante()" :disabled="page == nbPagesDeResultats">Suivant</button>
  
-  <H1>TABLE VUE-MATERIAL</H1>
   <div>
     <form v-if="isInModif" v-on:submit="modifierRestaurant" method="post">
       <h1>Modifier le restaurant {{nomModif}} :</h1>
@@ -42,7 +41,7 @@
                 </div>
 
                 <md-field md-clearable class="md-toolbar-section-end">
-                    <md-input placeholder="Search by name..." v-model="nomRecherche" @input="getDataFromServer()" />
+                    <md-input placeholder="Rechercher le nom du restaurant" v-model="nomRecherche" @input="getDataFromServer()" />
                 </md-field>
             </md-table-toolbar>
 

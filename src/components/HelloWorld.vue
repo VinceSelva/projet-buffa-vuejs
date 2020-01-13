@@ -1,6 +1,7 @@
 <template>
   <div>
-   <h1>Ici page d'accueil ! {{msg}}</h1>
+   <h1>Bienvenue sur le site des restaurants !</h1>
+   <h2>{{msg}}</h2>
    <!--
    <div>
       <small>Flat</small>

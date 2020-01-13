@@ -9,9 +9,16 @@ import RestaurantDetail from "./components/RestaurantDetail.vue";
 import HelloWorld from "./components/HelloWorld.vue";
 
 // configs...
+
+
+
+
+
 Vue.use(VueMaterial)
 Vue.config.productionTip = false
 Vue.use(VueRouter)
+
+
 
 // config du router :
 const router = new VueRouter({
@@ -20,7 +27,7 @@ const router = new VueRouter({
       path: '/', 
       component: HelloWorld, 
       props:{
-        msg:" site des restaurants"
+        msg:"Clément REJNERI et Vincent SELVA"
       } 
     },
     { 
@@ -37,6 +44,7 @@ const router = new VueRouter({
 
 new Vue({
   router,
+
 
   // si router pas de rendu de composant
   render: h => h(App)

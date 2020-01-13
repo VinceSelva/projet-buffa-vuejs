@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Details du restaurant {{nom}}</h1>
+    <h1 class="titre">Details du restaurant {{nom}}</h1>
     <p> Type : {{cuisine}} </p>
     <p> Adresse : {{addr}} </p>
 
@@ -26,10 +26,8 @@ export default {
     RestaurantNote,
     RestaurantMap
   },
-  computed: { // computed data, permet de définir des data "calculées"
+  computed: {
     id() {
-      // on y accèdera par {{id}} dans le template, et par this.id
-      // dans le code
       return this.$route.params.id
     }
   },
@@ -84,5 +82,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.titre{
+  
+}
 </style>
