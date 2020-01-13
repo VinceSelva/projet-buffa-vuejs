@@ -5,25 +5,15 @@
     <p> Adresse : {{restaurant}} </p>
     <p> Longitude : {{lon}} - Latitute : {{lat}} </p>
     <p> Description du quartier : {{quartier}} </p>
-    <img src="../assets/restaurant.jpg">
-    <restaurant-carte v-model="carte"></restaurant-carte>
-    <restaurant-menu v-model="menus"></restaurant-menu>
-    <restaurant-evaluation v-model="evaluations"></restaurant-evaluation>
     <div class="restaurant-map">esfsef</div>
   </div>
 </template>
 
 <script>
-import RestaurantCarte from './RestaurantCarte';
-import RestaurantMenu from './RestaurantMenu';
-import RestaurantEvaluation from './RestaurantEvaluation';
 export default {
   name: "RestaurantDetail",
   props: {},
   components: {
-    RestaurantCarte,
-    RestaurantMenu,
-    RestaurantEvaluation
   },
   computed: { // computed data, permet de définir des data "calculées"
     id() {

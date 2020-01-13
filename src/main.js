@@ -7,7 +7,6 @@ import VueRouter from 'vue-router'
 import Restaurants from "./components/Restaurants.vue";
 import RestaurantDetail from "./components/RestaurantDetail.vue";
 import HelloWorld from "./components/HelloWorld.vue";
-import vuetify from './plugins/vuetify';
 
 // configs...
 Vue.use(VueMaterial)
@@ -38,7 +37,6 @@ const router = new VueRouter({
 
 new Vue({
   router,
-  vuetify,
 
   // si router pas de rendu de composant
   render: h => h(App)
